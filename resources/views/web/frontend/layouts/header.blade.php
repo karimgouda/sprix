@@ -4,11 +4,11 @@
         <nav class="navbar navbar-expand-lg navbar-dark p-0">
             <a href="{{route('site.home')}}" class="navbar-brand">
                 <h1 class="text-white">
-{{--                    <img src="{{public_storage(settings('site_logo'))}}" width="50%" height="50%">--}}
+                    <img src="{{public_storage(settings('site_logo'))}}" width="50px" height="50px" style="border-radius: 50%;" />
                 </h1>
             </a>
             <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse">
+                data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">

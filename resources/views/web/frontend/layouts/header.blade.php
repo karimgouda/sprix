@@ -13,11 +13,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto">
-                    <a href="{{route('site.home')}}" class="nav-item nav-link active">{{__('site.Home')}}</a>
-                    <a href="{{route('site.about')}}" class="nav-item nav-link">{{__('site.About Us')}}</a>
-                    <a href="{{route('site.services')}}" class="nav-item nav-link">{{__('site.Services')}}</a>
-                    <a href="{{route('site.blog')}}" class="nav-item nav-link">{{__('site.Blogs')}}</a>
-                    <a href="{{route('site.contact')}}" class="nav-item nav-link">{{__('site.Contact')}}</a>
+                    <a href="{{route('site.home')}}" class="nav-item nav-link active">{{__('site.shared.Home')}}</a>
+                    <a href="{{route('site.about')}}" class="nav-item nav-link">{{__('site.shared.About Us')}}</a>
+                    <a href="{{route('site.services')}}" class="nav-item nav-link">{{__('site.shared.Services')}}</a>
+                    <a href="{{route('site.blog')}}" class="nav-item nav-link">{{__('site.shared.Blogs')}}</a>
+                    <a href="{{route('site.contact')}}" class="nav-item nav-link">{{__('site.shared.Contact')}}</a>
                 </div>
             </div>
         </nav>

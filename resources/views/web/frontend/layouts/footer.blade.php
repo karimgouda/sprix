@@ -47,7 +47,7 @@
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                     &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
 
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    <!--/*** This template is free as long as you keep the footer author's credit link/attribution link/backlink. If you'd like to use the template without the footer author's credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                     Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
@@ -64,7 +64,84 @@
 </div>
 <!-- Footer End -->
 
-@include('web.frontend.layouts.footer.whatsappicon')
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/+01812129509"
+    target="_blank"
+    rel="noopener"
+    class="whatsapp-float"
+    aria-label="Contact us on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+</a>
+
+<style>
+    /* WhatsApp Float Button */
+    .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 30px;
+        left: 20px;
+
+            {
+                {
+                app()->getLocale()==='ar' ? 'left': 'right'
+            }
+        }
+
+        : 30px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+    }
+
+    .whatsapp-float:hover {
+        background-color: #128c7e;
+        color: #fff;
+        transform: scale(1.1);
+        box-shadow: 2px 2px 20px rgba(37, 211, 102, 0.5);
+    }
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+
+        70% {
+            box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+
+        100% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .whatsapp-float {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            bottom: 20px;
+
+                {
+                    {
+                    app()->getLocale()==='ar' ? 'left': 'right'
+                }
+            }
+
+            : 20px;
+        }
+    }
+</style>
 
 @include('web.frontend.layouts.footer.scrolltotop')
 

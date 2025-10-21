@@ -1,5 +1,5 @@
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg navbar-dark  sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
     <div class="container">
         <!-- Logo -->
         <a href="{{ route('site.home') }}" class="navbar-brand d-flex align-items-center py-2">
@@ -34,7 +34,7 @@
                         class="nav-link px-3 {{ request()->routeIs('site.home') ? 'active fw-semibold' : '' }}"
                         {{ request()->routeIs('site.home') ? 'aria-current="page"' : '' }}>
                         <i class="bi bi-house-fill {{ app()->getLocale() === 'ar' ? 'ms-1' : 'me-1' }}"></i>
-                        {{ __('site.shared.Home') }}
+                        home
                     </a>
                 </li>
 
@@ -103,77 +103,97 @@
 <!-- Navbar End -->
 
 <style>
-    /* Enhanced Navbar Styles */
+    /* Navbar Base Styles */
     .navbar {
+        background: linear-gradient(135deg, rgba(13, 110, 253, 0.95) 0%, rgba(10, 88, 202, 0.95) 100%);
+        backdrop-filter: blur(10px);
+        transition: all 0.4s ease;
+        padding: 0.5rem 0;
+    }
+
+    .navbar.scrolled {
+        background: linear-gradient(135deg, rgba(13, 110, 253, 0.98) 0%, rgba(10, 88, 202, 0.98) 100%);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Logo Styles */
+    .navbar-brand {
         transition: all 0.3s ease;
     }
 
     .navbar-brand:hover {
         opacity: 0.9;
-        transform: scale(1.02);
-        transition: all 0.3s ease;
-    }
-
-    .nav-link {
-        position: relative;
-        transition: all 0.3s ease;
-        font-weight: 500;
-    }
-
-    .nav-link:hover {
-        color: #fff !important;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 0.375rem;
-    }
-
-    .nav-link.active {
-        color: #fff !important;
-        background-color: rgba(255, 255, 255, 0.15);
-        border-radius: 0.375rem;
-    }
-
-    .nav-link.active::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-
-            {
-                {
-                app()->getLocale()==='ar' ? 'right': 'left'
-            }
-        }
-
-        : 50%;
-
-        transform: translateX({
-                {
-                app()->getLocale()==='ar' ? '50%' : '-50%'
-            }
-        });
-    width: 30px;
-    height: 2px;
-    background-color: #fff;
-    border-radius: 2px;
-    }
-
-    /* Language Switcher Styles */
-    .language-switcher {
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 0.375rem;
-        cursor: pointer;
-    }
-
-    .language-switcher:hover {
-        background-color: rgba(255, 255, 255, 0.2);
         transform: scale(1.05);
     }
 
+    .navbar-brand img {
+        transition: all 0.3s ease;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .navbar-brand:hover img {
+        border-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Nav Links */
+    .nav-link {
+        position: relative;
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        margin: 0 0.25rem;
+    }
+
+    .nav-link i {
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+
+
+
+    /* Language Switcher */
+    .language-switcher {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%);
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .language-switcher:hover {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+        transform: scale(1.1);
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+
     .language-switcher i {
-        transition: transform 0.3s ease;
+        transition: transform 0.6s ease;
     }
 
     .language-switcher:hover i {
-        transform: rotate(180deg);
+        transform: rotate(360deg);
+    }
+
+    /* Navbar Toggler */
+    .navbar-toggler {
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 0.5rem 0.75rem;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-toggler:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
 
     /* RTL Support */
@@ -181,42 +201,159 @@
         text-align: right;
     }
 
+    [dir="rtl"] .nav-link.active::after {
+        right: 50%;
+        left: auto;
+    }
+
     /* Mobile Responsive */
     @media (max-width: 991.98px) {
+        .navbar {
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.98) 0%, rgba(10, 88, 202, 0.98) 100%);
+        }
+
         .nav-link.active::after {
             display: none;
         }
 
         .navbar-collapse {
             margin-top: 1rem;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            backdrop-filter: blur(10px);
         }
 
         .nav-item {
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
         }
 
         .nav-item:last-child {
             border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .nav-link {
+            padding: 0.75rem 1rem !important;
+            margin: 0;
+            border-radius: 0.375rem;
         }
 
         .language-switcher {
             justify-content: center;
+            margin-top: 0.5rem;
         }
     }
 
-    /* Desktop - Hide text, show only icon */
+    /* Desktop - Hide language text, show only icon */
     @media (min-width: 992px) {
         .language-switcher span {
             display: none;
         }
 
         .language-switcher {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 0 !important;
         }
     }
+
+    /* Smooth Scroll */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Animation for navbar on page load */
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .navbar {
+        animation: slideDown 0.5s ease-out;
+    }
+
+    /* Hover effect for all nav items */
+    .nav-item {
+        position: relative;
+    }
+
+    /* Active page indicator dot */
+    .nav-link.active::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+
+            {
+                {
+                app()->getLocale()==='ar' ? 'right': 'left'
+            }
+        }
+
+        : 8px;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 4px;
+        background-color: #fff;
+        border-radius: 50%;
+        opacity: 0.8;
+    }
 </style>
+
+<script>
+    // Add scrolled class to navbar on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.querySelector('.navbar');
+
+        if (navbar) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar-collapse');
+            const toggler = document.querySelector('.navbar-toggler');
+
+            if (navbar && navbar.classList.contains('show')) {
+                if (!navbar.contains(event.target) && !toggler.contains(event.target)) {
+                    toggler.click();
+                }
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    });
+</script>

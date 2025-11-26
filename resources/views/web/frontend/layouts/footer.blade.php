@@ -83,11 +83,9 @@
                 <div class="footer-col">
                     <h3 class="footer-title">{{ __('site.shared.Our Services') ?? 'Our Services' }}</h3>
                     <ul class="footer-links">
-                        <li><a href="#">{{ __('site.shared.Robotic Automation') ?? 'Robotic Automation' }}</a></li>
-                        <li><a href="#">{{ __('site.shared.Machine Learning') ?? 'Machine Learning' }}</a></li>
-                        <li><a href="#">{{ __('site.shared.Predictive Analysis') ?? 'Predictive Analysis' }}</a></li>
-                        <li><a href="#">{{ __('site.shared.Data Science') ?? 'Data Science' }}</a></li>
-                        <li><a href="#">{{ __('site.shared.Robot Technology') ?? 'Robot Technology' }}</a></li>
+                        @foreach($footerServices as $service)
+                        <li><a href="{{ route('site.services.details', $service->slug) }}">{{ $service->title }}</a></li>
+                        @endforeach
                     </ul>
                 </div>
 
@@ -95,23 +93,27 @@
                 <div class="footer-col">
                     <h3 class="footer-title">{{ __('site.shared.Get In Touch') ?? 'Get In Touch' }}</h3>
                     <ul class="footer-contact">
-                        @if(settings('contact_address'))
+                        @if(settings('address_'.app()->getLocale()))
                         <li>
                             <i class="bi bi-geo-alt-fill"></i>
-                            <span>{{ settings('contact_address') }}</span>
+                            <span>{{ settings('address_'.app()->getLocale()) }}</span>
                         </li>
                         @endif
-                        @if(settings('contact_phone'))
+                        @if(settings('phones'))
+                        @foreach(settings('phones') as $phone)
                         <li>
                             <i class="bi bi-telephone-fill"></i>
-                            <a href="tel:{{ settings('contact_phone') }}">{{ settings('contact_phone') }}</a>
+                            <a href="tel:{{ $phone }}">{{ $phone }}</a>
                         </li>
+                        @endforeach
                         @endif
-                        @if(settings('contact_email'))
+                        @if(settings('emails'))
+                        @foreach(settings('emails') as $email)
                         <li>
                             <i class="bi bi-envelope-fill"></i>
-                            <a href="mailto:{{ settings('contact_email') }}">{{ settings('contact_email') }}</a>
+                            <a href="mailto:{{ $email }}">{{ $email }}</a>
                         </li>
+                        @endforeach
                         @endif
                     </ul>
                 </div>

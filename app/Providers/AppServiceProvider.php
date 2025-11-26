@@ -29,12 +29,13 @@ class AppServiceProvider extends ServiceProvider
         if(Schema::hasTable('companies') && Schema::hasTable('promises')) {
             View::share('companies', Company::limit(4)->get());
             View::share('promises', Promise::limit(4)->get());
+            View::share('footerServices', \App\Models\ServicesMenu::limit(5)->get());
         }
 
         Health::checks([
             // UsedDiskSpaceCheck::new(),
             DatabaseCheck::new(),
         ]);
-        
+
     }
 }

@@ -283,6 +283,10 @@
         border-radius: 2px;
     }
 
+    .menu-toggle.active .hamburger {
+        display: none !important;
+    }
+
     @media (min-width: 1024px) {
         .navbar-menu-desktop {
             display: flex;

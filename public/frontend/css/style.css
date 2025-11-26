@@ -1,22 +1,21 @@
 /********** Template CSS **********/
 :root {
-    --primary: #1363C6;
-    --secondary: #15ACE1;
-    --light: #F4F7FE;
-    --dark: #14183E;
+    --primary: #1363c6;
+    --secondary: #15ace1;
+    --light: #f4f7fe;
+    --dark: #14183e;
 }
-
 
 /*** Spinner ***/
 #spinner {
     opacity: 0;
     visibility: hidden;
-    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
     z-index: 99999;
 }
 
 #spinner.show {
-    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    transition: opacity 0.5s ease-out, visibility 0s linear 0s;
     visibility: visible;
     opacity: 1;
 }
@@ -28,7 +27,6 @@
     bottom: 45px;
     z-index: 99;
 }
-
 
 /*** Heading ***/
 h1,
@@ -45,11 +43,10 @@ h6,
     font-weight: 500 !important;
 }
 
-
 /*** Button ***/
 .btn {
     font-weight: 500;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .btn-square {
@@ -78,11 +75,10 @@ h6,
     border-radius: 50px;
 }
 
-
 /*** Navbar ***/
 .sticky-top {
     top: -150px;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .navbar {
@@ -93,7 +89,7 @@ h6,
 .navbar .navbar-nav .nav-link {
     margin-right: 35px;
     padding: 0;
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, 0.7);
     outline: none;
 }
 
@@ -117,7 +113,7 @@ h6,
         background: var(--primary);
     }
 
-    .navbar .navbar-nav .nav-link  {
+    .navbar .navbar-nav .nav-link {
         margin-right: 0;
         padding: 10px 0;
     }
@@ -131,17 +127,16 @@ h6,
         top: 150%;
         opacity: 0;
         visibility: hidden;
-        transition: .5s;
+        transition: 0.5s;
     }
 
     .navbar .nav-item:hover .dropdown-menu {
         top: 100%;
         visibility: visible;
-        transition: .5s;
+        transition: 0.5s;
         opacity: 1;
     }
 }
-
 
 /*** Hero Header ***/
 .hero-header {
@@ -150,10 +145,9 @@ h6,
     background-size: cover;
 }
 
-.hero-header .breadcrumb-item+.breadcrumb-item::before {
+.hero-header .breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
 }
-
 
 /*** Section Title ***/
 .section-title::before {
@@ -194,14 +188,13 @@ h6,
     height: 10px;
     top: 2px;
     left: 0;
-    background: rgba(33, 66, 177, .5);
+    background: rgba(33, 66, 177, 0.5);
 }
 
 .section-title h6::after {
     top: 5px;
     left: 3px;
 }
-
 
 /*** About ***/
 .about-img {
@@ -220,13 +213,12 @@ h6,
     background-size: contain;
 }
 
-
 /*** Service ***/
 .service-item {
     position: relative;
     padding: 45px 30px;
-    background: #FFFFFF;
-    transition: .5s;
+    background: #ffffff;
+    transition: 0.5s;
 }
 
 .service-item:hover {
@@ -239,28 +231,28 @@ h6,
     height: 90px;
     color: var(--primary);
     background: var(--light);
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .service-item:hover .service-icon {
-    background: #FFFFFF;
+    background: #ffffff;
 }
 
 .service-item h5,
 .service-item p {
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .service-item:hover h5,
 .service-item:hover p {
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .service-item a.btn {
     position: relative;
     display: flex;
     color: var(--primary);
-    transition: .5s;
+    transition: 0.5s;
     z-index: 1;
 }
 
@@ -277,7 +269,7 @@ h6,
     left: 0;
     border-radius: 35px;
     background: var(--light);
-    transition: .5s;
+    transition: 0.5s;
     z-index: -1;
 }
 
@@ -286,13 +278,11 @@ h6,
     background: var(--light);
 }
 
-
 /*** Feature ***/
 .feature {
     background: url(../img/bg-hero.png) center center no-repeat;
     background-size: cover;
 }
-
 
 /*** Newsletter ***/
 .newsletter {
@@ -305,33 +295,32 @@ h6,
         max-width: 100% !important;
     }
 
-    .newsletter .newsletter-text  {
-        padding-right: calc(((100% - 960px) / 2) + .75rem);
+    .newsletter .newsletter-text {
+        padding-right: calc(((100% - 960px) / 2) + 0.75rem);
     }
 }
 
 @media (min-width: 1200px) {
-    .newsletter .newsletter-text  {
-        padding-right: calc(((100% - 1140px) / 2) + .75rem);
+    .newsletter .newsletter-text {
+        padding-right: calc(((100% - 1140px) / 2) + 0.75rem);
     }
 }
 
 @media (min-width: 1400px) {
-    .newsletter .newsletter-text  {
-        padding-right: calc(((100% - 1320px) / 2) + .75rem);
+    .newsletter .newsletter-text {
+        padding-right: calc(((100% - 1320px) / 2) + 0.75rem);
     }
 }
 
-
 /*** Case Study ***/
 .case-item img {
-    transition: .5s;
+    transition: 0.5s;
 }
-  
+
 .case-item:hover img {
     transform: scale(1.2);
 }
-  
+
 .case-overlay {
     position: absolute;
     padding: 30px;
@@ -350,18 +339,17 @@ h6,
 .case-overlay small {
     display: inline-block;
     padding: 3px 15px;
-    color: #FFFFFF;
-    background: rgba(20, 24, 62, .7);
+    color: #ffffff;
+    background: rgba(20, 24, 62, 0.7);
     border-radius: 25px;
     margin-bottom: 15px;
 }
 
 .case-overlay span.btn:hover {
     color: var(--primary);
-    background: #FFFFFF;
-    border-color: #FFFFFF;
+    background: #ffffff;
+    border-color: #ffffff;
 }
-
 
 /*** FAQs ***/
 .accordion .accordion-item {
@@ -375,7 +363,7 @@ h6,
 }
 
 .accordion .accordion-button:not(.collapsed) {
-    color: #FFFFFF;
+    color: #ffffff;
     background: var(--primary);
     box-shadow: none;
 }
@@ -387,7 +375,6 @@ h6,
 .accordion .accordion-body {
     padding: 15px 0 0 0;
 }
-
 
 /*** Testimonial ***/
 .testimonial-carousel {
@@ -414,17 +401,17 @@ h6,
     align-items: center;
     justify-content: center;
     color: var(--primary);
-    background: #FFFFFF;
+    background: #ffffff;
     border: 1px solid var(--primary);
     border-radius: 40px;
     font-size: 18px;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .testimonial-carousel .owl-nav .owl-prev:hover,
 .testimonial-carousel .owl-nav .owl-next:hover {
     background: var(--primary);
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .testimonial-carousel .owl-dots {
@@ -438,10 +425,10 @@ h6,
     margin-right: 10px;
     width: 15px;
     height: 15px;
-    background: #FFFFFF;
+    background: #ffffff;
     border: 1px solid var(--primary);
     border-radius: 15px;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .testimonial-carousel .owl-dot.active {
@@ -449,19 +436,16 @@ h6,
     background: var(--primary);
 }
 
-
 /*** Team ***/
 .team-item {
-    transition: .5s;
+    transition: 0.5s;
     border: 1px solid transparent;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .team-item:hover {
-
     border-color: var(--primary);
 }
-
 
 /*** Footer ***/
 .footer {
@@ -476,10 +460,10 @@ h6,
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(255,255,255,.5);
-    border: 1px solid rgba(256, 256, 256, .1);
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(256, 256, 256, 0.1);
     border-radius: 40px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .footer .btn.btn-social:hover {
@@ -491,13 +475,13 @@ h6,
     margin-bottom: 10px;
     padding: 0;
     text-align: left;
-    color: rgba(255,255,255,.5);
+    color: rgba(255, 255, 255, 0.5);
     font-weight: normal;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .footer .btn.btn-link:hover {
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .footer .btn.btn-link::before {
@@ -516,25 +500,45 @@ h6,
 .footer .copyright {
     padding: 25px 0;
     font-size: 14px;
-    border-top: 1px solid rgba(256, 256, 256, .1);
+    border-top: 1px solid rgba(256, 256, 256, 0.1);
 }
 
 .footer .copyright a {
-    color: rgba(255,255,255,.5);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .footer .copyright a:hover {
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .footer .footer-menu a {
     margin-right: 15px;
     padding-right: 15px;
-    border-right: 1px solid rgba(255, 255, 255, .1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer .footer-menu a:last-child {
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.9);
 }

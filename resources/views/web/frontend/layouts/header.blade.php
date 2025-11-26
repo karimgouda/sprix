@@ -272,12 +272,6 @@
         background: var(--nav-hover);
     }
 
-    .navbar-menu-desktop .nav-link.active {
-        color: var(--nav-primary);
-        background: var(--nav-active);
-        font-weight: 600;
-    }
-
     .navbar-menu-desktop .nav-link.active::after {
         content: "";
         position: absolute;

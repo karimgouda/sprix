@@ -2,12 +2,12 @@
 <nav class="navbar-modern" role="navigation" aria-label="Main navigation">
     <div class="navbar-container">
         <!-- Logo -->
-        <a href="{{ route('site.home') }}" class="navbar-logo shadow-sm" aria-label="{{ __('site.shared.Home') ?? 'Home' }}">
+        <a href="{{ route('site.home') }}" class="navbar-logo " aria-label="{{ __('site.shared.Home') ?? 'Home' }}">
             <img src="{{ public_storage(settings('site_logo')) }}"
                 alt="{{ settings('site_name') ?? 'Website' }}"
                 width="50"
                 height="50"
-                class="logo-img"
+                class="logo-img shadow-sm"
                 loading="lazy">
             <span class="logo-text">
                 {{ settings('site_name') ?? 'Website' }}

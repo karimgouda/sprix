@@ -106,7 +106,7 @@
         --nav-muted: #6b7280;
         --nav-hover-bg: #f3f4f6;
         --nav-active-bg: #e5e7eb;
-        --nav-primary: #0d6efd;
+        --nav-primary: #004AAC;
     }
 
     /* Base modern navbar (فوق) */

@@ -356,61 +356,6 @@
 </section>
 <!-- Team Section End -->
 
-<!-- Testimonial Section Start -->
-<section class="section-premium section-testimonials">
-    <div class="container-premium">
-        <div class="section-intro" data-aos="fade-up">
-            <span class="section-tag section-tag-center">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M8 1L10.472 5.99L16 6.83L12 10.72L12.944 16L8 13.41L3.056 16L4 10.72L0 6.83L5.528 5.99L8 1Z" fill="currentColor" />
-                </svg>
-                {{ __('site.Testimonial') }}
-            </span>
-            <h2 class="section-heading section-heading-center">{{ __('site.What Say Our Clients!') }}</h2>
-            <p class="section-lead">{{ __('site.Testimonial_description') }}</p>
-        </div>
-
-        <div class="testimonials-slider owl-carousel">
-            @foreach($clients as $client)
-            <div class="testimonial-premium-card">
-                <div class="testimonial-card-header">
-                    <svg class="testimonial-quote-icon" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                        <path d="M10 20C10 15.5817 13.5817 12 18 12V8C11.3726 8 6 13.3726 6 20H10ZM18 12C18 16.4183 14.4183 20 10 20V24C16.6274 24 22 18.6274 22 12H18ZM30 20C30 15.5817 33.5817 12 38 12V8C31.3726 8 26 13.3726 26 20H30ZM38 12C38 16.4183 34.4183 20 30 20V24C36.6274 24 42 18.6274 42 12H38Z" fill="currentColor" />
-                    </svg>
-                </div>
-                <p class="testimonial-card-text">{{ $client->description }}</p>
-                <div class="testimonial-card-author">
-                    <img src="{{ public_storage($client->image) }}"
-                        alt="{{ $client->name }}"
-                        class="testimonial-author-avatar"
-                        loading="lazy">
-                    <div class="testimonial-author-info">
-                        <div class="testimonial-author-name">{{ $client->name }}</div>
-                        <div class="testimonial-author-role">{{ $client->profession }}</div>
-                    </div>
-                </div>
-                <div class="testimonial-card-rating">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10 1L12.9389 7.0557L19.5106 8.0902L14.7553 12.6943L15.8779 19.2098L10 16.0557L4.12215 19.2098L5.24472 12.6943L0.489435 8.0902L7.06107 7.0557L10 1Z" />
-                    </svg>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10 1L12.9389 7.0557L19.5106 8.0902L14.7553 12.6943L15.8779 19.2098L10 16.0557L4.12215 19.2098L5.24472 12.6943L0.489435 8.0902L7.06107 7.0557L10 1Z" />
-                    </svg>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10 1L12.9389 7.0557L19.5106 8.0902L14.7553 12.6943L15.8779 19.2098L10 16.0557L4.12215 19.2098L5.24472 12.6943L0.489435 8.0902L7.06107 7.0557L10 1Z" />
-                    </svg>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10 1L12.9389 7.0557L19.5106 8.0902L14.7553 12.6943L15.8779 19.2098L10 16.0557L4.12215 19.2098L5.24472 12.6943L0.489435 8.0902L7.06107 7.0557L10 1Z" />
-                    </svg>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10 1L12.9389 7.0557L19.5106 8.0902L14.7553 12.6943L15.8779 19.2098L10 16.0557L4.12215 19.2098L5.24472 12.6943L0.489435 8.0902L7.06107 7.0557L10 1Z" />
-                    </svg>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
 <!-- Testimonial Section End -->
 
 @endsection

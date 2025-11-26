@@ -168,7 +168,7 @@
     }
 
     .nav-link-modern.active {
-        color: var(--nav-text) !important;
+        color: var(--nav-primary) !important;
         background-color: var(--nav-active-bg);
         font-weight: 600;
     }

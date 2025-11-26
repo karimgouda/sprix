@@ -130,7 +130,7 @@
                     {{ __('site.shared.All rights reserved') ?? 'All rights reserved' }}.
                 </p>
                 <ul class="footer-bottom-links">
-                    <li><a href="#">{{ __('site.shared.Privacy Policy') ?? 'Privacy Policy' }}</a></li>
+                    <li><a href="{{ route('site.privacy-policy') }}">{{ __('site.shared.Privacy Policy') ?? 'Privacy Policy' }}</a></li>
                     <li><a href="#">{{ __('site.shared.Terms of Service') ?? 'Terms of Service' }}</a></li>
                     <li><a href="#">{{ __('site.shared.Cookies') ?? 'Cookies' }}</a></li>
                 </ul>

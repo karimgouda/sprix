@@ -107,9 +107,12 @@ class MainController extends Controller
         Contact::create($data);
 
         try {
-            \Mail::to(settings('email') ?? 'admin@example.com')->send(new \App\Mail\ContactFormMail($data));
+            $email = settings('email');
+            $recipient = !empty($email) ? $email : 'admin@example.com';
+            \Mail::to($recipient)->send(new \App\Mail\ContactFormMail($data));
             return redirect()->back()->with('success', __("pages.contact.We've received your request successfully!"));
         } catch (\Exception $e) {
+            \Log::error($e->getMessage());
             return redirect()->back()->with('error', __('site.Something went wrong, please try again later.'));
         }
     }

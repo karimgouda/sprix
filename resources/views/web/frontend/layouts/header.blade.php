@@ -5,8 +5,8 @@
         <a href="{{ route('site.home') }}" class="navbar-logo" aria-label="{{ __('site.shared.Home') ?? 'Home' }}">
             <img src="{{ public_storage(settings('site_logo')) }}"
                 alt="{{ settings('site_name') ?? 'Website' }}"
-                width="80"
-                height="80"
+                width="50"
+                height="50"
                 class="logo-img"
                 loading="lazy">
             <span class="logo-text">

@@ -103,8 +103,15 @@ class MainController extends Controller
      */
     public function storeContact(ContactRequest $request)
     {
-        Contact::create($request->all());
-        return redirect()->back()->with('success', __("pages.contact.We've received your request successfully!"));
+        $data = $request->all();
+        Contact::create($data);
+
+        try {
+            \Mail::to(settings('email') ?? 'admin@example.com')->send(new \App\Mail\ContactFormMail($data));
+            return redirect()->back()->with('success', __("pages.contact.We've received your request successfully!"));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', __('site.Something went wrong, please try again later.'));
+        }
     }
 
     /**

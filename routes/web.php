@@ -20,7 +20,9 @@ Route::middleware('maintenance')->group(function() {
                 Route::get('/home', 'home')->name('home');
                 Route::get('/about', 'about')->name('about');
                 Route::get('/services', 'services')->name('services');
+                Route::get('/services/{slug}', 'serviceDetails')->name('services.details');
                 Route::get('/blog', 'blog')->name('blog');
+                Route::get('/blog/{slug}', 'blogDetails')->name('blog.details');
                 Route::get('/contact', 'contact')->name('contact');
                 Route::post('/contact', 'storeContact')->name('contact.store');
                 Route::get('/privacy-policy', 'privacyPolicy')->name('privacy-policy');

@@ -43,6 +43,9 @@ class GoalResource extends Resource
                     TextInput::make('title')
                         ->required()
                         ->maxLength(255),
+                    TextInput::make('slug')
+                        ->required()
+                        ->maxLength(255),
                     Forms\Components\Textarea::make('description'),
                     TagsInput::make('points')
                         ->placeholder('New Point')

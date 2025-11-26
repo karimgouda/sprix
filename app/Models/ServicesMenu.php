@@ -13,5 +13,5 @@ class ServicesMenu extends Model
 
     protected $guarded = [];
 
-    public $translatable = ['title', 'description', 'sub_title', 'sub_description', 'sub_title_2', 'sub_description_2', 'sub_title_3', 'sub_description_3', 'image', 'image_2', 'image_3', 'progresses_titles', 'progresses_percentages'];
+    public $translatable = ['title', 'description', 'sub_title', 'sub_description', 'sub_title_2', 'sub_description_2', 'sub_title_3', 'sub_description_3', 'image', 'image_2', 'image_3', 'progresses_titles', 'progresses_percentages', 'slug'];
 }

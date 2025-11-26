@@ -211,7 +211,7 @@
                     </div>
                     <h3 class="service-card-title">{{ $service->title ?? 'Service Title' }}</h3>
                     <p class="service-card-text">{{ $service->description ?? 'Service description' }}</p>
-                    <a href="{{ route('site.services') }}" class="service-card-link">
+                    <a href="{{ route('site.services.details', $service->slug) }}" class="service-card-link">
                         <span>{{ __('site.Learn More') ?? 'Learn More' }}</span>
                         <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
                             <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -250,7 +250,7 @@
                 <div class="blog-card-body">
                     <h3 class="blog-card-title">{{ $blog->title }}</h3>
                     <p class="blog-card-excerpt">{{ Str::limit($blog->description, 120) }}</p>
-                    <a href="#" class="blog-card-cta">
+                    <a href="{{ route('site.blog.details', $blog->slug) }}" class="blog-card-cta">
                         <span>{{ __('site.Read Article') ?? 'Read Article' }}</span>
                         <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
                             <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

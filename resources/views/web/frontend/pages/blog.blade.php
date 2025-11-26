@@ -57,7 +57,7 @@
                     <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
                         <div class="case-item position-relative overflow-hidden rounded mb-2">
                             <img class="img-fluid" src="{{public_storage($blog->image)}}" alt="">
-                            <a class="case-overlay text-decoration-none" href="">
+                            <a class="case-overlay text-decoration-none" href="{{route('site.blog.details', $blog->slug)}}">
                                 <small>{{$blog->title}}</small>
                                 <h5 class="lh-base text-white mb-3">
                                     {{str()->length($blog->description)}}

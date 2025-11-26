@@ -14,7 +14,7 @@ class Goal extends Model
 
     protected $guarded = [];
 
-    public $translatable = ['title', 'description', 'points', 'image', 'image_2', 'image_3'];
+    public $translatable = ['title', 'description', 'points', 'image', 'image_2', 'image_3', 'slug'];
 
     /**
      * Get all of the goal's points.

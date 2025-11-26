@@ -71,7 +71,7 @@
                                                 </div>
                                                 <h5 class="mb-3">{{ $item->title ?? 'Service Title' }}</h5>
                                                 <p>{{ $item->description ?? 'Default description' }}</p>
-                                                <a class="btn px-3 mt-auto mx-auto" href="{{route('site.about')}}">{{__('site.Read More')}}</a>
+                                                <a class="btn px-3 mt-auto mx-auto" href="{{route('site.services.details', $item->slug)}}">{{__('site.Read More')}}</a>
                                             </div>
                                         </div>
                                     @endforeach

@@ -41,6 +41,9 @@ class ServicesMenuResource extends Resource
                     TextInput::make('title')
                         ->required()
                         ->maxLength(255),
+                    TextInput::make('slug')
+                        ->required()
+                        ->maxLength(255),
                     Forms\Components\Textarea::make('description'),
                     FileUpload::make('image')
                         ->label('Main Image')

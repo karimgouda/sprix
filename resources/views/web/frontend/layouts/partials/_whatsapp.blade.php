@@ -1,5 +1,5 @@
 @if(settings('whatsapp'))
-    <a href="https://wa.me/{{ settings('whatsapp') }}" target="_blank" class="whatsapp-widget" title="Chat with us on WhatsApp">
+    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', settings('whatsapp')) }}" target="_blank" class="whatsapp-widget" title="Chat with us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 

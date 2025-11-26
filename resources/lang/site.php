@@ -18,6 +18,8 @@ return
             'Services'              => 'Services',
             'Blogs'                 => 'Blogs',
             'Contact Us'            => 'Contact Us',
+            'Quick Links' => 'Quick Links',
+
         ],
 
         /**

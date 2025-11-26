@@ -96,15 +96,6 @@
             </div>
         </div>
     </div>
-
-    <div class="hero-scroll" data-aos="fade-up" data-aos-delay="800">
-        <div class="scroll-indicator">
-            <span>{{ __('site.Scroll to explore') ?? 'Scroll to explore' }}</span>
-            <div class="scroll-icon">
-                <div class="scroll-dot"></div>
-            </div>
-        </div>
-    </div>
 </section>
 <!-- Hero Section End -->
 

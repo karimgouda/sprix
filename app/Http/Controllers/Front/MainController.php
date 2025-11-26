@@ -135,14 +135,20 @@ class MainController extends Controller
 
     public function serviceDetails($slug)
     {
-        $service = ServicesMenu::where('slug->' . app()->getLocale(), $slug)->firstOrFail();
+        $service = ServicesMenu::where('slug->' . app()->getLocale(), $slug)
+            ->orWhere('slug->en', $slug)
+            ->orWhereJsonContains('slug', $slug)
+            ->firstOrFail();
         $banner = Banner::where('page_type', 'services')->first();
         return view('web.frontend.pages.service_details', compact('service', 'banner'));
     }
 
     public function blogDetails($slug)
     {
-        $blog = Goal::where('slug->' . app()->getLocale(), $slug)->firstOrFail();
+        $blog = Goal::where('slug->' . app()->getLocale(), $slug)
+            ->orWhere('slug->en', $slug)
+            ->orWhereJsonContains('slug', $slug)
+            ->firstOrFail();
         $banner = Banner::where('page_type', 'blog')->first();
         return view('web.frontend.pages.blog_details', compact('blog', 'banner'));
     }

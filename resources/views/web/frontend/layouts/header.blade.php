@@ -70,7 +70,7 @@
                     <a href="{{ route('site.contact') }}"
                         class="nav-link nav-link-modern px-3 {{ request()->routeIs('site.contact') ? 'active fw-semibold' : '' }}"
                         {{ request()->routeIs('site.contact') ? 'aria-current=page' : '' }}>
-                        {{ __('site.shared.Contact') }}
+                        {{ __('site.shared.Contact Us') }}
                     </a>
                 </li>
 

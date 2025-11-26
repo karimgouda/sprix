@@ -111,17 +111,22 @@
 
     /* Base modern navbar (فوق) */
     .modern-nav {
-        padding: 16px 0;
-        background-color: #ffffff !important;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
-        transition: padding 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        transition: padding 0.35s ease,
+            background-color 0.35s ease,
+            transform 0.4s ease;
+        /* الحركة الأساسية */
+        will-change: transform;
     }
 
-    /* لما يسكرول تبقى كومباكت وتشد نفسها تحت شوية */
     .modern-nav.modern-nav--compact {
-        padding: 8px 0;
-        background-color: #ffffff !important;
-        border-bottom-color: rgba(0, 0, 0, 0.12) !important;
+        padding: 6px 0;
+        transform: translateY(-6px);
+        /* يطلع لفوق بسيط */
+    }
+
+    /* ممكن نزودها فخامة أكتر */
+    .modern-nav:not(.modern-nav--compact) {
+        transform: translateY(0);
     }
 
     .brand-text {

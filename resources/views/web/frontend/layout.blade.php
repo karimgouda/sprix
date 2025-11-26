@@ -44,6 +44,8 @@
 
     {!! settings('body_manager_script') !!}
 
+    @include('web.frontend.layouts.partials._whatsapp')
+
 </body>
 
 </html>

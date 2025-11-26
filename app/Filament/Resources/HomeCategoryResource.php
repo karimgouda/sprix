@@ -55,6 +55,9 @@ class HomeCategoryResource extends Resource
                         ->label('Twitter Link'),
                     TextInput::make('progresses_percentages')
                         ->label('Instagram Link'),
+                    TextInput::make('youtube')
+                        ->label('YouTube Link')
+                        ->maxLength(255),
                 ]),
             ]);
     }
@@ -69,6 +72,7 @@ class HomeCategoryResource extends Resource
                 TextColumn::make('video')->limit(50)->searchable()->label('Facebook Link'),
                 TextColumn::make('progresses_titles')->limit(50)->searchable()->label('Twitter Link'),
                 TextColumn::make('progresses_percentages')->limit(50)->searchable()->label('Instagram Link'),
+                TextColumn::make('youtube')->limit(50)->searchable()->label('YouTube Link'),
                 ImageColumn::make('image'),
                 TextColumn::make('created_at')
                     ->dateTime(),

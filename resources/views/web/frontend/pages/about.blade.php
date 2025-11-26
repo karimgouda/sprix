@@ -118,6 +118,10 @@
                                                 class="fab fa-twitter"></i></a>
                                         <a class="btn btn-square btn-primary m-1" href="{{$item->progresses_percentages}}"><i
                                                 class="fab fa-instagram"></i></a>
+                                        @if($item->youtube)
+                                        <a class="btn btn-square btn-primary m-1" href="{{$item->youtube}}"><i
+                                                class="fab fa-youtube"></i></a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

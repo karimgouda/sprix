@@ -48,6 +48,7 @@ class MainController extends Controller
         $faqs  = Characteristic::get();
         $teams = HomeCategory::limit(4)->get();
         $clients = Worker::get();
+        $heroStats = \App\Models\HeroStatistic::all();
         return view('web.frontend.pages.home', get_defined_vars());
     }
 

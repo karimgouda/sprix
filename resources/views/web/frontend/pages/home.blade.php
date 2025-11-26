@@ -43,22 +43,19 @@
                         </svg>
                     </a>
                 </div>
+                @if(count($heroStats) > 0)
                 <div class="hero-stats">
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">{{ __('site.Projects') ?? 'Projects' }}</div>
+                    @foreach($heroStats as $index => $stat)
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}">
+                        <div class="stat-number">{{ $stat->number }}</div>
+                        <div class="stat-label">{{ $stat->title }}</div>
                     </div>
+                    @if(!$loop->last)
                     <div class="stat-divider"></div>
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">{{ __('site.Satisfaction') ?? 'Satisfaction' }}</div>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">{{ __('site.Awards') ?? 'Awards' }}</div>
-                    </div>
+                    @endif
+                    @endforeach
                 </div>
+                @endif
             </div>
 
             <div class="hero-right" data-aos="fade-left" data-aos-delay="200">

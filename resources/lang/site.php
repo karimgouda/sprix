@@ -19,6 +19,7 @@ return
             'Blogs'                 => 'Blogs',
             'Contact Us'            => 'Contact Us',
             'Quick Links' => 'Quick Links',
+            "Our Services" => "Our Services",
 
         ],
 

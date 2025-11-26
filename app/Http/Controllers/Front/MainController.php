@@ -108,15 +108,18 @@ class MainController extends Controller
         Contact::create($data);
 
         try {
-            $email = settings('email');
-            $recipient = !empty($email) ? $email : 'admin@example.com';
-            \Mail::to($recipient)->send(new \App\Mail\ContactFormMail($data));
-            return redirect()->back()->with('success', __("pages.contact.We've received your request successfully!"));
-        } catch (\Exception $e) {
-            \Log::error($e->getMessage());
-            return redirect()->back()->with('error', __('site.Something went wrong, please try again later.'));
-        }
+        $emails = settings('emails');
+        $recipient = (!empty($emails) && is_array($emails) && count($emails) > 0)
+            ? $emails[0]
+            : env('MAIL_FROM_ADDRESS', 'admin@example.com');
+
+        \Mail::to($recipient)->send(new \App\Mail\ContactFormMail($data));
+        return redirect()->back()->with('success', __("pages.contact.We've received your request successfully!"));
+    } catch (\Exception $e) {
+        \Log::error('Contact form error: ' . $e->getMessage());
+        return redirect()->back()->with('error', __('site.Something went wrong, please try again later.'));
     }
+}
 
     /**
      * Privacy & Policy Page
